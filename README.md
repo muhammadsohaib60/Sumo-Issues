@@ -84,7 +84,7 @@ Match the port in your script:
 traci.connect(port=63420)
 
 4. Debug with Verbose Logging
-5. 
+
 Enable verbose logging in SUMO to get detailed information about the error:
 
 sumo --log log.txt --verbose true
