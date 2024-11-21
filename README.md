@@ -103,13 +103,11 @@ Then, execute your Python script.
 
 6. Update SUMO and Dependencies
    
-Ensure you're using the latest versions of:
-
-SUMO
+Ensure you're using the latest versions of: SUMO
 
 Python TraCI module (sumo-tools or sumolib)
 
-Update TraCI dependencies with:
+7. Update TraCI dependencies with:
 
 pip install sumolib traci --upgrade
 
