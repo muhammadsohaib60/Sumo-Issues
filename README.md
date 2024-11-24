@@ -1,40 +1,22 @@
-The error indicates that your script is failing to establish a connection with the TraCI server (Traffic Control Interface for SUMO). The primary issue lies in:
+The error indicates that your script is failing to establish a connection with the TraCI server (Traffic Control Interface for SUMO). 
 
-Port Unavailability: The default port (e.g., 63417, 63419) is either:
+The primary issue lies in:
 
-Already in use by another process.
-
-Not properly configured in your SUMO simulation or Python script.
+Port Unavailability: The default port (e.g., 63417, 63419) is either: Already in use by another process. Not properly configured in your SUMO simulation or Python script.
 
 Server Termination: The TraCI server appears to have finished or terminated before your script could connect.
 
-Potential Causes:
+TraCI Server Mismanagement: SUMO simulation ends prematurely, closing the TraCI server. TraCI client (Python script) tries to connect after the server has already terminated.
 
-TraCI Server Mismanagement:
+Port Conflicts: The specified port (63417 or 63419) is occupied by another application. SUMO is trying to start on a random port but fails to connect consistently.
 
-SUMO simulation ends prematurely, closing the TraCI server.
+Improper Initialization: The script may be attempting to connect to TraCI before the SUMO simulation is fully initialized.
 
-TraCI client (Python script) tries to connect after the server has already terminated.
+Firewall or Network Issues: Localhost communication via the specified port is being blocked.
 
-Port Conflicts:
+Incorrect Configuration: SUMO's configuration or command-line arguments may be incorrectly specified.
 
-The specified port (63417 or 63419) is occupied by another application.
-
-SUMO is trying to start on a random port but fails to connect consistently.
-
-Improper Initialization:
-
-The script may be attempting to connect to TraCI before the SUMO simulation is fully initialized.
-
-Firewall or Network Issues:
-
-Localhost communication via the specified port is being blocked.
-
-Incorrect Configuration:
-
-SUMO's configuration or command-line arguments may be incorrectly specified.
-
-Steps to Correct the Error
+Steps to Correct the Error :
 
 1. Verify TraCI Server Initialization
    
